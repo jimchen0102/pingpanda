@@ -3,6 +3,7 @@ import { SignOutButton } from "@clerk/nextjs"
 import { MaxWidthWrapper } from "./max-width-wrapper"
 import { Button, buttonVariants } from "./ui/button"
 import { ArrowRight } from "lucide-react"
+import { cn } from "@/lib/utils"
 
 export const Navbar = () => {
   const user = false
@@ -57,10 +58,12 @@ export const Navbar = () => {
 
                 <Link
                   href="/sign-up"
-                  className={buttonVariants({
-                    size: "sm",
-                    className: "flex items-center gap-1.5",
-                  })}
+                  className={cn(
+                    buttonVariants({
+                      size: "sm",
+                      className: "gap-1.5",
+                    })
+                  )}
                 >
                   Sign up <ArrowRight className="size-4" />
                 </Link>

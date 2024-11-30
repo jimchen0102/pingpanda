@@ -1,13 +1,14 @@
 import Image from "next/image"
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism"
-import { Check } from "lucide-react"
+import { Check, Star } from "lucide-react"
 import { Heading } from "@/components/heading"
 import { MaxWidthWrapper } from "@/components/max-width-wrapper"
 import { ShinyButton } from "@/components/shiny-button"
 import { MockDiscordUI } from "@/components/mock-discord-ui"
 import { AnimatedList } from "@/components/ui/animated-list"
 import { DiscordMessage } from "@/components/discord-message"
+import { Icons } from "@/components/icons"
 
 const Page = () => {
   const codeSnippet = `await fetch("http://localhost:3000/api/v1/events", {
@@ -129,10 +130,12 @@ const Page = () => {
       <section className="relative bg-brand-25 py-24 sm:py-32">
         <MaxWidthWrapper className="flex flex-col items-center gap-16 sm:gap-20">
           <div>
-            <h2 className="text-center text-base/7 font-semibold text-brand-600">
+            <h3 className="text-center text-base/7 font-semibold text-brand-600">
               Intuitive Monitoring
-            </h2>
-            <Heading>Stay ahead with real-time insights</Heading>
+            </h3>
+            <Heading as="h2" className="text-center">
+              Stay ahead with real-time insights
+            </Heading>
           </div>
 
           <div className="grid gap-4 lg:grid-cols-3 lg:grid-rows-2">
@@ -274,6 +277,96 @@ const Page = () => {
               <div className="pointer-events-none absolute inset-px rounded-lg shadow ring-1 ring-black/5 max-lg:rounded-b-[2rem] lg:rounded-r-[2rem]" />
             </div>
           </div>
+        </MaxWidthWrapper>
+      </section>
+
+      <section className="relative bg-white py-24 sm:py-32">
+        <MaxWidthWrapper className="flex flex-col items-center gap-16 sm:gap-20">
+          <div>
+            <h3 className="text-center text-base/7 font-semibold text-brand-600">
+              Real-World Experiences
+            </h3>
+            <Heading as="h2" className="text-center">
+              What our customers say
+            </Heading>
+          </div>
+
+          <div className="mx-auto grid max-w-2xl grid-cols-1 divide-y divide-gray-200 px-4 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:divide-x lg:divide-y-0">
+            {/* first customer review */}
+            <div className="flex flex-auto flex-col gap-4 rounded-t-[2rem] bg-brand-25 p-6 sm:p-8 lg:rounded-l-[2rem] lg:rounded-tr-none lg:p-16">
+              <div className="mb-2 flex justify-center gap-0.5 lg:justify-start">
+                <Star className="size-5 fill-brand-600 text-brand-600" />
+                <Star className="size-5 fill-brand-600 text-brand-600" />
+                <Star className="size-5 fill-brand-600 text-brand-600" />
+                <Star className="size-5 fill-brand-600 text-brand-600" />
+                <Star className="size-5 fill-brand-600 text-brand-600" />
+              </div>
+
+              <p className="text-pretty text-center text-base font-medium tracking-tight text-brand-950 sm:text-lg lg:text-left lg:text-lg/8">
+                PingPanda has been a game-changer for me. I&apos;ve been using
+                it for two months now and seeing sales pop up in real-time is
+                super satisfying.
+              </p>
+
+              <div className="mt-2 flex flex-col items-center justify-center gap-4 sm:flex-row sm:items-start lg:justify-start">
+                <Image
+                  src="/user-2.png"
+                  className="rounded-full object-cover"
+                  alt="Random user"
+                  width={48}
+                  height={48}
+                />
+                <div className="flex flex-col items-center sm:items-start">
+                  <p className="flex items-center font-semibold">
+                    Freya Larsson
+                    <Icons.verificationBadge className="ml-1.5 inline-block size-4" />
+                  </p>
+                  <p className="text-sm text-gray-600">@itsfreya</p>
+                </div>
+              </div>
+            </div>
+
+            {/* second customer review */}
+            <div className="flex flex-auto flex-col gap-4 rounded-b-[2rem] bg-brand-25 p-6 sm:p-8 lg:rounded-r-[2rem] lg:rounded-bl-none lg:p-16">
+              <div className="mb-2 flex justify-center gap-0.5 lg:justify-start">
+                <Star className="size-5 fill-brand-600 text-brand-600" />
+                <Star className="size-5 fill-brand-600 text-brand-600" />
+                <Star className="size-5 fill-brand-600 text-brand-600" />
+                <Star className="size-5 fill-brand-600 text-brand-600" />
+                <Star className="size-5 fill-brand-600 text-brand-600" />
+              </div>
+
+              <p className="text-pretty text-center text-base font-medium tracking-tight text-brand-950 sm:text-lg lg:text-left lg:text-lg/8">
+                PingPanda&apos;s been paying off for our SaaS. Nice to have
+                simple way to see how we&apos;re doing day-to-day. Definitely
+                makes our lives easier.
+              </p>
+
+              <div className="mt-2 flex flex-col items-center justify-center gap-4 sm:flex-row sm:items-start lg:justify-start">
+                <Image
+                  src="/user-1.png"
+                  className="rounded-full object-cover"
+                  alt="Random user"
+                  width={48}
+                  height={48}
+                />
+                <div className="flex flex-col items-center sm:items-start">
+                  <p className="flex items-center font-semibold">
+                    Kai Durant
+                    <Icons.verificationBadge className="ml-1.5 inline-block size-4" />
+                  </p>
+                  <p className="text-sm text-gray-600">@kdurant_</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <ShinyButton
+            href="/sign-up"
+            className="relative z-10 h-14 w-full max-w-xs text-base shadow-lg transition-shadow duration-300 hover:shadow-xl"
+          >
+            Start For Free Today
+          </ShinyButton>
         </MaxWidthWrapper>
       </section>
     </>
