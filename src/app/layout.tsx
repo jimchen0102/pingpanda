@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils"
 
 import "./globals.css"
 import { ClerkProvider } from "@clerk/nextjs"
+import { zhTW } from "@clerk/localizations"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
 const eb_garamond = EB_Garamond({
@@ -25,10 +26,12 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <ClerkProvider>
+    <ClerkProvider localization={zhTW}>
       <html lang="en" className={cn(inter.variable, eb_garamond.variable)}>
-        <body className="bg-brand-50 font-sans text-brand-950 antialiased">
-          <Providers>{children}</Providers>
+        <body className="flex min-h-screen flex-col bg-brand-50 font-sans text-brand-950 antialiased">
+          <main className="relative flex flex-1 flex-col">
+            <Providers>{children}</Providers>
+          </main>
         </body>
       </html>
     </ClerkProvider>
