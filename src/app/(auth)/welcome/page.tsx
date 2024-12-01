@@ -15,14 +15,16 @@ const Page = () => {
     queryKey: ["get-database-sync-status"],
     queryFn: async () => {
       const res = await client.auth.getDatabaseSyncStatus.$get()
-      const data = await res.json()
-      return data
+      return await res.json()
+    },
+    refetchInterval: (query) => {
+      return query.state.data?.isSynced ? false : 1000
     },
   })
 
   useEffect(() => {
     if (data?.isSynced) {
-      router.push("/dashboard")
+      router.push("/dashboard?from=welcome")
     }
   }, [data, router])
 
