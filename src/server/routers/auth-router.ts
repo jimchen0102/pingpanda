@@ -12,9 +12,7 @@ export const authRouter = router({
     }
 
     const user = await db.user.findFirst({
-      where: {
-        externalId: auth.id,
-      },
+      where: { externalId: auth.id },
     })
 
     if (!user) {

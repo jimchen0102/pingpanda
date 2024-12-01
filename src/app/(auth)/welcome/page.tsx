@@ -12,12 +12,12 @@ const Page = () => {
   const router = useRouter()
 
   const { data } = useQuery({
+    queryKey: ["get-database-sync-status"],
     queryFn: async () => {
       const res = await client.auth.getDatabaseSyncStatus.$get()
       const data = await res.json()
       return data
     },
-    queryKey: ["get-database-sync-status"],
   })
 
   useEffect(() => {
