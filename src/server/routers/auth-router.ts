@@ -25,8 +25,6 @@ export const authRouter = router({
           email: auth.emailAddresses[0].emailAddress,
         },
       })
-
-      return c.json({ isSynced: true })
     }
 
     return c.json({ isSynced: true })
