@@ -10,6 +10,7 @@ import { Button, buttonVariants } from "@/components/ui/button"
 import { Modal } from "@/components/ui/modal"
 import { client } from "@/lib/client"
 import { cn } from "@/lib/utils"
+import { DashboardEmptyState } from "./dashboard-empty-state"
 
 export const DashboardPageContent = () => {
   const [deletingCategory, setDeletingCategory] = useState<string | null>(null)
@@ -45,7 +46,7 @@ export const DashboardPageContent = () => {
   }
 
   if (!categories || categories.length === 0) {
-    return <div>empty status</div>
+    return <DashboardEmptyState />
   }
 
   return (
