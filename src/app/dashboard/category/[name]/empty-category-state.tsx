@@ -37,7 +37,7 @@ export const EmptyCategoryState = ({
     }
   }, [hasEvents, router])
 
-  const codeSnippet = `await fetch('https://localhost:3000/api/events', {
+  const codeSnippet = `await fetch('https://pingpanda-six.vercel.app/api/v1/events', {
   method: 'POST',
   headers: {
     'Authorization': 'Bearer YOUR_API_KEY'

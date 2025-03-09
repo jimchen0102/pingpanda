@@ -3,7 +3,6 @@ import { z } from "zod"
 import { CATEGORY_NAME_VALIDATOR } from "@/lib/validators/category-validator"
 import { DiscordClient } from "@/lib/discord-client"
 import { db } from "@/db"
-import { FREE_QUOTA, PRO_QUOTA } from "@/config"
 
 const REQUEST_VALIDATOR = z
   .object({
@@ -55,29 +54,6 @@ export const POST = async (req: NextRequest) => {
     const currentData = new Date()
     const currentMonth = currentData.getMonth() + 1
     const currentYear = currentData.getFullYear()
-
-    const quota = await db.quota.findUnique({
-      where: {
-        userId: user.id,
-        month: currentMonth,
-        year: currentYear,
-      },
-    })
-
-    const quotaLimit =
-      user.plan === "FREE"
-        ? FREE_QUOTA.maxEventsPerMonth
-        : PRO_QUOTA.maxEventsPerMonth
-
-    if (quota && quota.count >= quotaLimit) {
-      return NextResponse.json(
-        {
-          message:
-            "Monthly quota reached. Please upgrade your plan for more events",
-        },
-        { status: 429 }
-      )
-    }
 
     const discord = new DiscordClient(process.env.DISCORD_BOT_TOKEN)
 
@@ -147,17 +123,6 @@ export const POST = async (req: NextRequest) => {
       await db.event.update({
         where: { id: event.id },
         data: { deliveryStatus: "DELIVERED" },
-      })
-
-      await db.quota.upsert({
-        where: { userId: user.id, month: currentMonth, year: currentYear },
-        update: { count: { increment: 1 } },
-        create: {
-          userId: user.id,
-          month: currentMonth,
-          year: currentYear,
-          count: 1,
-        },
       })
     } catch (err) {
       await db.event.update({

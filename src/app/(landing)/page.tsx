@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image"
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism"
@@ -11,7 +13,7 @@ import { DiscordMessage } from "@/components/discord-message"
 import { Icons } from "@/components/icons"
 
 const Page = () => {
-  const codeSnippet = `await fetch("http://localhost:3000/api/v1/events", {
+  const codeSnippet = `await fetch("https://pingpanda-six.vercel.app/api/v1/events", {
   method: "POST",
   body: JSON.stringify({
     category: "sale",
@@ -25,6 +27,22 @@ const Page = () => {
     Authorization: "Bearer <YOUR_API_KEY>"
   }
 })`
+
+  const fetchData = () => {
+    fetch("https://pingpanda-six.vercel.app/api/events", {
+      method: "POST",
+      headers: {
+        Authorization: "Bearer cm45g8mp5000138y4aakpkaji",
+      },
+      body: JSON.stringify({
+        category: "haha",
+        fields: {
+          field1: "value1",
+          field2: "value2",
+        },
+      }),
+    })
+  }
 
   return (
     <>
@@ -67,6 +85,9 @@ const Page = () => {
               >
                 立即開始
               </ShinyButton>
+              <button type="button" onClick={fetchData}>
+                fetchData
+              </button>
             </div>
           </div>
         </MaxWidthWrapper>
