@@ -28,22 +28,6 @@ const Page = () => {
   }
 })`
 
-  const fetchData = () => {
-    fetch("https://pingpanda-six.vercel.app/api/events", {
-      method: "POST",
-      headers: {
-        Authorization: "Bearer cm45g8mp5000138y4aakpkaji",
-      },
-      body: JSON.stringify({
-        category: "haha",
-        fields: {
-          field1: "value1",
-          field2: "value2",
-        },
-      }),
-    })
-  }
-
   return (
     <>
       <section className="relative bg-brand-25 py-24 sm:py-32">
@@ -85,9 +69,6 @@ const Page = () => {
               >
                 立即開始
               </ShinyButton>
-              <button type="button" onClick={fetchData}>
-                fetchData
-              </button>
             </div>
           </div>
         </MaxWidthWrapper>
