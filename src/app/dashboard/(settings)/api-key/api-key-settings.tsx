@@ -19,7 +19,7 @@ export const ApiKeySettings = ({ apiKey }: { apiKey: string }) => {
   return (
     <Card className="w-full max-w-xl">
       <div>
-        <Label>Your API Key</Label>
+        <Label>你的 API Key</Label>
         <div className="relative mt-1">
           <Input type="password" value={apiKey} readOnly />
           <div className="absolute inset-y-0 right-0 flex items-center space-x-0.5">
@@ -38,7 +38,7 @@ export const ApiKeySettings = ({ apiKey }: { apiKey: string }) => {
         </div>
 
         <p className="mt-2 text-sm/6 text-gray-600">
-          Keep your key secret and do not share it with others.
+          請保密你的金鑰，不要與任何人分享。
         </p>
       </div>
     </Card>

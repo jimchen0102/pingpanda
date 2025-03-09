@@ -49,8 +49,8 @@ export const MockDiscordUI = ({ children }: PropsWithChildren) => {
       {/* dm list */}
       <div className="hidden w-60 flex-col bg-[#2f3136] md:flex">
         <div className="flex h-16 items-center border-b border-[#202225] px-4 shadow-sm">
-          <div className="flex h-8 w-full cursor-not-allowed items-center justify-center rounded bg-[#202225] px-2 text-sm text-gray-500">
-            Find or start a conversation
+          <div className="flex h-8 w-full cursor-not-allowed items-center rounded bg-[#202225] px-2 text-sm text-gray-500">
+            搜尋或開始一個對話
           </div>
         </div>
 
@@ -58,7 +58,7 @@ export const MockDiscordUI = ({ children }: PropsWithChildren) => {
           <div className="mb-4 px-2">
             <div className="flex cursor-not-allowed items-center rounded px-2 py-1.5 text-sm text-discord-text hover:bg-[#393c43]">
               <UserCircle className="mr-4 size-8 text-[#b9bbbe]" />
-              <span className="text-sm font-medium">Friends</span>
+              <span className="text-sm font-medium">好友</span>
             </div>
             <div className="flex cursor-not-allowed items-center rounded px-2 py-1.5 text-sm text-discord-text hover:bg-[#393c43]">
               <Inbox className="mr-4 size-8 text-[#b9bbbe]" />
@@ -68,7 +68,7 @@ export const MockDiscordUI = ({ children }: PropsWithChildren) => {
 
           <div className="mb-4 px-2">
             <h3 className="mb-2 px-2 text-xs font-semibold uppercase text-[#8e9297]">
-              Direct Messages
+              私人訊息
             </h3>
 
             <div className="flex cursor-pointer items-center rounded bg-[#393c43] px-2 py-1.5 text-white">

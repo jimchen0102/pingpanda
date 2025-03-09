@@ -34,9 +34,9 @@ const Page = () => {
 
       <div className="relative z-10 flex -translate-y-1/2 flex-col items-center gap-6 text-center">
         <LoadingSpinner size="md" />
-        <Heading as="h2">Creating your account...</Heading>
+        <Heading as="h2">正在創建您的帳號...</Heading>
         <p className="max-w-prose text-base/7 text-gray-600">
-          Just a moment while we set things up for you.
+          稍等片刻，我們正在為您設置。
         </p>
       </div>
     </div>

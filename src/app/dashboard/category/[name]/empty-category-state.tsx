@@ -57,10 +57,10 @@ export const EmptyCategoryState = ({
       className="flex flex-1 items-center justify-center"
     >
       <h2 className="to-gray-950 text-center text-xl/8 font-medium tracking-tight">
-        Create your first {categoryName} event
+        建立你的第一個 {categoryName} 事件
       </h2>
       <p className="mb-8 max-w-md text-pretty text-center text-sm/6 text-gray-600">
-        Get started by sending a request to our tracking API:
+        通過向我們的追蹤 API 發送請求來開始使用：
       </p>
 
       <div className="w-full max-w-3xl overflow-hidden rounded-lg bg-white shadow-lg">
@@ -88,25 +88,9 @@ export const EmptyCategoryState = ({
         </SyntaxHighlighter>
       </div>
 
-      <div className="mt-8 flex flex-col items-center">
-        <div className="flex items-center space-x-2">
-          <div className="size-2 animate-pulse rounded-full bg-green-500"></div>
-          <span className="text-sm text-gray-600">
-            Listening to incoming events...
-          </span>
-        </div>
-
-        <p className="mt-2 text-sm/6 text-gray-600">
-          Need help? Check out our{" "}
-          <a href="#" className="text-blue-600 hover:underline">
-            documentation
-          </a>{" "}
-          or{" "}
-          <a href="#" className="text-blue-600 hover:underline">
-            contact support
-          </a>
-          .
-        </p>
+      <div className="mt-8 flex items-center space-x-2">
+        <div className="size-2 animate-pulse rounded-full bg-green-500"></div>
+        <span className="text-sm text-gray-600">正在監聽傳入事件...</span>
       </div>
     </Card>
   )

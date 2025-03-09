@@ -22,7 +22,7 @@ interface SidebarCategory {
 const SIDEBAR_ITEMS: SidebarCategory[] = [
   {
     category: "Overview",
-    items: [{ href: "/dashboard", icon: Home, text: "Dashboard" }],
+    items: [{ href: "/dashboard", icon: Home, text: "儀表板" }],
   },
   {
     category: "Settings",
@@ -31,7 +31,7 @@ const SIDEBAR_ITEMS: SidebarCategory[] = [
       {
         href: "/dashboard/account-settings",
         icon: Settings,
-        text: "Account Settings",
+        text: "個人設定",
       },
     ],
   },

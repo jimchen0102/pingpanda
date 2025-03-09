@@ -108,16 +108,16 @@ export const CreateEventCategoryModal = ({
         <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
           <div>
             <h2 className="text-lg/7 font-medium tracking-tight text-gray-950">
-              New Event Category
+              建立事件類別
             </h2>
             <p className="text-sm/6 text-gray-600">
-              Crate a new category to organize your events.
+              建立一個新類別來管理您的事件。{" "}
             </p>
           </div>
 
           <div className="space-y-5">
             <div>
-              <Label htmlFor="name">Name</Label>
+              <Label htmlFor="name">名稱</Label>
               <Input
                 id="name"
                 autoFocus
@@ -133,7 +133,7 @@ export const CreateEventCategoryModal = ({
             </div>
 
             <div>
-              <Label htmlFor="color">Color</Label>
+              <Label htmlFor="color">顏色</Label>
               <div className="flex flex-wrap gap-3">
                 {COLOR_OPTIONS.map((premadeColor) => (
                   <button
@@ -190,10 +190,10 @@ export const CreateEventCategoryModal = ({
               variant="outline"
               onClick={() => setIsOpen(false)}
             >
-              Cancel
+              取消
             </Button>
             <Button type="submit" disabled={isCreatingCategory}>
-              {isCreatingCategory ? "Creating" : "Create category"}
+              {isCreatingCategory ? "建立中..." : "建立類別"}
             </Button>
           </div>
         </form>

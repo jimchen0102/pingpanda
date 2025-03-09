@@ -36,16 +36,16 @@ export const AccountSettings = ({
       </div>
 
       <p className="mt-2 text-sm/6 text-gray-600">
-        Don&apos;t know how to find your Discord ID?{" "}
+        不知道如何找到你的 Discord ID？
         <Link href="#" className="text-brand-600 hover:text-brand-500">
-          Learn how to obtain it here
+          在這裡了解如何獲取它。
         </Link>
         .
       </p>
 
       <div className="pt-4">
         <Button onClick={() => mutate(discordId)} disabled={isPending}>
-          {isPending ? "Saving..." : "Save Changes"}
+          {isPending ? "儲存中..." : "儲存變更"}
         </Button>
       </div>
     </Card>

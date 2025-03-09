@@ -32,27 +32,26 @@ const Page = () => {
         <MaxWidthWrapper>
           <div className="relative mx-auto flex flex-col items-center gap-10 text-center">
             <Heading>
-              <span>Real-Time SaaS Insights,</span>
+              <span>掌握事件通知</span>
               <br />
               <span className="relative bg-gradient-to-r from-brand-700 to-brand-800 bg-clip-text text-transparent">
-                Delivered to Your Discord
+                發送到你的 Discord
               </span>
             </Heading>
 
             <p className="max-w-prose text-pretty text-center text-base/7 text-gray-600">
-              PingPanda is the easiest way to monitor your SaaS. Get instant
-              notifications for{" "}
+              PingPanda 是最簡單的監控工具。即時{" "}
               <span className="font-semibold text-gray-700">
-                sales, new users, or any other event
+                獲取銷售、新用戶或任何重要事件
               </span>{" "}
-              sent directly to your Discord.
+              的通知，直接發送到你的 Discord。
             </p>
 
             <ul className="flex flex-col space-y-2 text-left text-base/7 text-gray-600 sm:items-start">
               {[
-                "Real-time Discord alerts for critical events",
-                "Buy once, use forever",
-                "Track sales, new users, or any other event",
+                "即時 Discord 通知，掌握關鍵事件",
+                "追蹤銷售、新用戶及其他重要事件",
+                "無須付費，立即使用",
               ].map((item, index) => (
                 <li key={index} className="flex items-center gap-1.5 text-left">
                   <Check className="size-5 shrink-0 text-brand-700" />
@@ -66,7 +65,7 @@ const Page = () => {
                 href="/sign-up"
                 className="h-14 w-full shadow-lg transition-shadow duration-300 hover:shadow-xl"
               >
-                Start For Free Today
+                立即開始
               </ShinyButton>
             </div>
           </div>
@@ -84,10 +83,10 @@ const Page = () => {
                     avatarSrc="/brand-asset-profile-picture.png"
                     avatarAlt="PingPanda Avatar"
                     username="PingPanda"
-                    timestamp="Today at 12:35PM"
+                    timestamp="今天 下午 12:35"
                     badgeText="SignUp"
                     badgeColor="#43b581"
-                    title="👤 New user signed up"
+                    title="👤 新用戶註冊"
                     content={{
                       name: "Mateo Ortiz",
                       email: "m.ortiz19@gmail.com",
@@ -97,10 +96,10 @@ const Page = () => {
                     avatarSrc="/brand-asset-profile-picture.png"
                     avatarAlt="PingPanda Avatar"
                     username="PingPanda"
-                    timestamp="Today at 12:35PM"
+                    timestamp="今天 下午 12:35"
                     badgeText="Revenue"
                     badgeColor="#faa61a"
-                    title="💰 Payment received"
+                    title="💰 已收到付款"
                     content={{
                       amount: "$49.00",
                       email: "zoe.martinez2001@email.com",
@@ -111,10 +110,10 @@ const Page = () => {
                     avatarSrc="/brand-asset-profile-picture.png"
                     avatarAlt="PingPanda Avatar"
                     username="PingPanda"
-                    timestamp="Today at 5:11AM"
+                    timestamp="今天 上午 5:11"
                     badgeText="Milestone"
                     badgeColor="#5865f2"
-                    title="🚀 Revenue Milestone Achieved"
+                    title="🚀 達成里程碑"
                     content={{
                       recurringRevenue: "$5.000 USD",
                       growth: "+8.2%",
@@ -131,10 +130,10 @@ const Page = () => {
         <MaxWidthWrapper className="flex flex-col items-center gap-16 sm:gap-20">
           <div>
             <h3 className="text-center text-base/7 font-semibold text-brand-600">
-              Intuitive Monitoring
+              直覺監控
             </h3>
             <Heading as="h2" className="text-center">
-              Stay ahead with real-time insights
+              直覺化監控，隨時掌握即時洞察
             </Heading>
           </div>
 
@@ -146,11 +145,10 @@ const Page = () => {
               <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] lg:rounded-l-[calc(2rem+1px)]">
                 <div className="px-8 pb-3 pt-8 sm:px-10 sm:pb-0 sm:pt-10">
                   <p className="mt-2 text-lg/7 font-medium tracking-tight text-brand-950 max-lg:text-center">
-                    Real-time notifications
+                    即時通知
                   </p>
                   <p className="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">
-                    Get notified about critical events the moment they happen,
-                    no matter if you&apos;re at home or on the go.
+                    關鍵事件發生時立即收到通知，無論你身處何地，都能即時應對。
                   </p>
                 </div>
 
@@ -175,11 +173,10 @@ const Page = () => {
               <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] max-lg:rounded-t-[calc(2rem+1px)]">
                 <div className="px-8 pt-8 sm:px-10 sm:pt-10">
                   <p className="mt-2 text-lg/7 font-medium tracking-tight text-brand-950 max-lg:text-center">
-                    Track Any Event
+                    追蹤任何事件
                   </p>
                   <p className="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">
-                    From new user signups to successful payments, PingPanda
-                    notifies you for all critical events in your SaaS.
+                    從新用戶註冊到成功付款，PingPanda 為你提供全方位事件通知。
                   </p>
                 </div>
                 <div className="flex flex-1 items-center justify-center px-8 max-lg:pb-12 max-lg:pt-10 sm:px-10 lg:pb-2">
@@ -202,11 +199,10 @@ const Page = () => {
               <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)]">
                 <div className="px-8 pt-8 sm:px-10 sm:pt-10">
                   <p className="mt-2 text-lg/7 font-medium tracking-tight text-brand-950 max-lg:text-center">
-                    Track Any Properties
+                    追蹤自訂屬性
                   </p>
                   <p className="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">
-                    Add any custom data you like to an event, such as a user
-                    email, a purchase amount or an exceeded quota.
+                    為每個事件添加自訂數據，如用戶電子郵件、購買金額或超額配額，精確掌握關鍵資訊。
                   </p>
                 </div>
 
@@ -231,11 +227,10 @@ const Page = () => {
               <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] max-lg:rounded-b-[calc(2rem+1px)] lg:rounded-r-[calc(2rem+1px)]">
                 <div className="px-8 pb-3 pt-8 sm:px-10 sm:pb-0 sm:pt-10">
                   <p className="mt-2 text-lg/7 font-medium tracking-tight text-brand-950 max-lg:text-center">
-                    Easy Integration
+                    簡單整合
                   </p>
                   <p className="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">
-                    Connect PingPanda with your existing workflows in minutes
-                    and call our intuitive logging API from any language.
+                    只需幾分鐘即可將 PingPanda 無縫連接到現有工作流程。
                   </p>
                 </div>
 
@@ -284,10 +279,10 @@ const Page = () => {
         <MaxWidthWrapper className="flex flex-col items-center gap-16 sm:gap-20">
           <div>
             <h3 className="text-center text-base/7 font-semibold text-brand-600">
-              Real-World Experiences
+              真實體驗
             </h3>
             <Heading as="h2" className="text-center">
-              What our customers say
+              聽聽我們的用戶怎麼說
             </Heading>
           </div>
 
@@ -303,9 +298,8 @@ const Page = () => {
               </div>
 
               <p className="text-pretty text-center text-base font-medium tracking-tight text-brand-950 sm:text-lg lg:text-left lg:text-lg/8">
-                PingPanda has been a game-changer for me. I&apos;ve been using
-                it for two months now and seeing sales pop up in real-time is
-                super satisfying.
+                「PingPanda
+                改變了我的遊戲規則！使用兩個月以來，能夠即時看到銷售出現，真的超有成就感。」
               </p>
 
               <div className="mt-2 flex flex-col items-center justify-center gap-4 sm:flex-row sm:items-start lg:justify-start">
@@ -337,9 +331,8 @@ const Page = () => {
               </div>
 
               <p className="text-pretty text-center text-base font-medium tracking-tight text-brand-950 sm:text-lg lg:text-left lg:text-lg/8">
-                PingPanda&apos;s been paying off for our SaaS. Nice to have
-                simple way to see how we&apos;re doing day-to-day. Definitely
-                makes our lives easier.
+                「PingPanda 為我們的 SaaS
+                帶來了實際效益。能夠簡單查看每日業績，讓我們的工作變得更輕鬆，絕對值得擁有！」
               </p>
 
               <div className="mt-2 flex flex-col items-center justify-center gap-4 sm:flex-row sm:items-start lg:justify-start">
@@ -365,7 +358,7 @@ const Page = () => {
             href="/sign-up"
             className="relative z-10 h-14 w-full max-w-xs text-base shadow-lg transition-shadow duration-300 hover:shadow-xl"
           >
-            Start For Free Today
+            立即開始
           </ShinyButton>
         </MaxWidthWrapper>
       </section>

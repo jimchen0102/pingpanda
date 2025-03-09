@@ -161,10 +161,10 @@ export const CategoryPageContent = ({
             <p className="text-2xl font-bold">{relevantSum.toFixed(2)}</p>
             <p className="text-xs/5 text-muted-foreground">
               {activeTab === "today"
-                ? "today"
+                ? "今天"
                 : activeTab === "week"
-                ? "this week"
-                : "this month"}
+                ? "本週"
+                : "本月"}
             </p>
           </div>
         </Card>
@@ -176,8 +176,8 @@ export const CategoryPageContent = ({
     () => [
       {
         accessorKey: "category",
-        header: "Category",
-        cell: () => <span>{category.name || "Uncategorized"}</span>,
+        header: "類別",
+        cell: () => <span>{category.name || "未分類"}</span>,
       },
       {
         accessorKey: "createdAt",
@@ -189,7 +189,7 @@ export const CategoryPageContent = ({
                 column.toggleSorting(column.getIsSorted() === "asc")
               }
             >
-              Date
+              日期
               <ArrowUpDown className="ml-2 size-4" />
             </Button>
           )
@@ -209,7 +209,7 @@ export const CategoryPageContent = ({
         : []),
       {
         accessorKey: "deliveryStatus",
-        header: "Delivery Status",
+        header: "發送狀態",
         cell: ({ row }) => (
           <span
             className={cn("px-2 py-1 rounded-full text-xs font-semibold", {
@@ -265,16 +265,16 @@ export const CategoryPageContent = ({
         }}
       >
         <TabsList className="mb-2">
-          <TabsTrigger value="today">Today</TabsTrigger>
-          <TabsTrigger value="week">This Week</TabsTrigger>
-          <TabsTrigger value="month">This Month</TabsTrigger>
+          <TabsTrigger value="today">今天</TabsTrigger>
+          <TabsTrigger value="week">本週</TabsTrigger>
+          <TabsTrigger value="month">本月</TabsTrigger>
         </TabsList>
 
         <TabsContent value={activeTab}>
           <div className="mb-16 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
             <Card className="border-2 border-brand-700">
               <div className="flex flex-row items-center justify-between space-y-0 pb-2">
-                <p className="text-sm/6 font-medium">Total Events</p>
+                <p className="text-sm/6 font-medium">事件總數</p>
                 <BarChart className="size-4 text-muted-foreground" />
               </div>
 
@@ -283,10 +283,10 @@ export const CategoryPageContent = ({
                 <p className="text-xs/5 text-muted-foreground">
                   Events{" "}
                   {activeTab === "today"
-                    ? "today"
+                    ? "今天"
                     : activeTab === "week"
-                    ? "this week"
-                    : "this month"}
+                    ? "本週"
+                    : "本月"}
                 </p>
               </div>
             </Card>
@@ -299,7 +299,7 @@ export const CategoryPageContent = ({
       <div className="flex flex-col gap-4">
         <div className="flex items-center justify-between">
           <div className="flex w-full flex-col gap-4">
-            <Heading className="text-3xl">Event overview</Heading>
+            <Heading className="text-3xl">事件總覽</Heading>
           </div>
         </div>
 
@@ -352,7 +352,7 @@ export const CategoryPageContent = ({
                     colSpan={columns.length}
                     className="h-24 text-center"
                   >
-                    No results.
+                    沒有結果。
                   </TableCell>
                 </TableRow>
               )}
@@ -368,7 +368,7 @@ export const CategoryPageContent = ({
           onClick={() => table.previousPage()}
           disabled={!table.getCanPreviousPage() || isFetching}
         >
-          Previous
+          上一頁
         </Button>
         <Button
           variant="outline"
@@ -376,7 +376,7 @@ export const CategoryPageContent = ({
           onClick={() => table.nextPage()}
           disabled={!table.getCanNextPage() || isFetching}
         >
-          Next
+          下一頁
         </Button>
       </div>
     </div>

@@ -20,7 +20,7 @@ const Page = async () => {
   }
 
   return (
-    <DashboardPage title="Account Settings">
+    <DashboardPage title="個人設定">
       <AccountSettings discordId={user.discordId ?? ""} />
     </DashboardPage>
   )

@@ -30,11 +30,11 @@ export const DashboardEmptyState = () => {
       </div>
 
       <h1 className="mt-2 text-xl/8 font-medium tracking-tight text-gray-900">
-        No Event Categories Yet
+        還沒有任何事件類別
       </h1>
 
       <p className="mb-8 mt-2 max-w-prose text-sm/6 text-gray-600">
-        Start tracking events by creating your first category.
+        通過創建您的第一個類別來開始跟蹤事件。
       </p>
 
       <div className="flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
@@ -45,11 +45,11 @@ export const DashboardEmptyState = () => {
           onClick={() => insertQuickstartCategories()}
         >
           <span className="size-5">🚀</span>
-          <span>{isPending ? "Creating" : "Quickstart"}</span>
+          <span>{isPending ? "建立中" : "快速開始"}</span>
         </Button>
 
         <CreateEventCategoryModal containerClassName="w-full sm:w-auto">
-          <Button className="w-full">Add Category</Button>
+          <Button className="w-full">新建類別</Button>
         </CreateEventCategoryModal>
       </div>
     </Card>

@@ -77,7 +77,7 @@ export const DashboardPageContent = () => {
                     {category.emoji || "📂"} {category.name}
                   </h3>
                   <p className="text-sm/6 text-gray-600">
-                    {format(category.createdAt, "MMM d, yyyy")}
+                    {format(category.createdAt, "yyyy-MM-dd")}
                   </p>
                 </div>
               </div>
@@ -85,21 +85,21 @@ export const DashboardPageContent = () => {
               <div className="mb-6 space-y-3">
                 <div className="flex items-center text-sm/5 text-gray-600">
                   <Clock className="mr-2 size-4 text-brand-500" />
-                  <span className="font-medium">Last ping:</span>
+                  <span className="font-medium">最後通知:</span>
                   <span className="ml-1">
                     {category.lastPing
                       ? formatDistanceToNow(category.lastPing) + "ago"
-                      : "Never"}
+                      : "尚無通知"}
                   </span>
                 </div>
                 <div className="flex items-center text-sm/5 text-gray-600">
                   <Database className="mr-2 size-4 text-brand-500" />
-                  <span className="font-medium">Unique fields:</span>
+                  <span className="font-medium">事件欄位:</span>
                   <span className="ml-1">{category.uniqueFieldCount || 0}</span>
                 </div>
                 <div className="flex items-center text-sm/5 text-gray-600">
                   <BarChart2 className="mr-2 size-4 text-brand-500" />
-                  <span className="font-medium">Events this month:</span>
+                  <span className="font-medium">本月活動:</span>
                   <span className="ml-1">{category.eventsCount || 0}</span>
                 </div>
               </div>
@@ -115,7 +115,7 @@ export const DashboardPageContent = () => {
                     })
                   )}
                 >
-                  View all <ArrowRight className="size-4" />
+                  查看全部 <ArrowRight className="size-4" />
                 </Link>
                 <Button
                   variant="ghost"
@@ -140,17 +140,16 @@ export const DashboardPageContent = () => {
         <div className="space-y-6">
           <div>
             <h2 className="text-lg/7 font-medium tracking-tight text-gray-950">
-              Delete Category
+              刪除類別
             </h2>
             <p className="text-sm/6 text-gray-600">
-              Are you sure you want to delete the category &quot;
-              {deletingCategory}&quot;? This action cannot be undone.
+              您確定要刪除類別「{deletingCategory}」嗎？此操作無法撤銷。
             </p>
           </div>
 
           <div className="flex justify-end space-x-3 border-t pt-4">
             <Button variant="outline" onClick={() => setDeletingCategory(null)}>
-              Cancel
+              取消
             </Button>
             <Button
               variant="destructive"
@@ -159,7 +158,7 @@ export const DashboardPageContent = () => {
                 deletingCategory && deleteCategory(deletingCategory)
               }
             >
-              {isDeletingCategory ? "Deleting..." : "Delete"}
+              {isDeletingCategory ? "刪除中..." : "刪除"}
             </Button>
           </div>
         </div>

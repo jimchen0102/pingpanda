@@ -22,7 +22,7 @@ export const Navbar = async () => {
               <>
                 <SignOutButton>
                   <Button size="sm" variant="ghost">
-                    Sign out
+                    登出
                   </Button>
                 </SignOutButton>
 
@@ -33,7 +33,7 @@ export const Navbar = async () => {
                     className: "gap-1.5",
                   })}
                 >
-                  Dashboard <ArrowRight className="size-4" />
+                  儀表板 <ArrowRight className="size-4" />
                 </Link>
               </>
             ) : (
@@ -45,7 +45,7 @@ export const Navbar = async () => {
                     variant: "ghost",
                   })}
                 >
-                  Sign in
+                  登入
                 </Link>
 
                 <Link
@@ -57,7 +57,7 @@ export const Navbar = async () => {
                     })
                   )}
                 >
-                  Sign up <ArrowRight className="size-4" />
+                  註冊 <ArrowRight className="size-4" />
                 </Link>
               </>
             )}

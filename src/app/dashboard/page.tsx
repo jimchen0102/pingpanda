@@ -25,12 +25,12 @@ const Page = async () => {
   return (
     <>
       <DashboardPage
-        title="Dashboard"
+        title="儀表板"
         cta={
           <CreateEventCategoryModal>
             <Button className="w-full sm:w-fit">
               <PlusIcon className="size-4" />
-              Add Category
+              新建類別
             </Button>
           </CreateEventCategoryModal>
         }
