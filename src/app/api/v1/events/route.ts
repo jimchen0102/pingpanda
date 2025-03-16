@@ -12,12 +12,32 @@ const REQUEST_VALIDATOR = z
   })
   .strict()
 
+const corsHeaders = {
+  "Access-Control-Allow-Origin": "*", // 允許所有來源
+  "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+  "Access-Control-Allow-Headers": "*", // 允許所有標頭
+  "Access-Control-Allow-Credentials": "true",
+}
+
+export async function OPTIONS() {
+  return new NextResponse(null, {
+    status: 204,
+    headers: corsHeaders,
+  })
+}
+
 export const POST = async (req: NextRequest) => {
   try {
     const authHeader = req.headers.get("Authorization")
 
     if (!authHeader) {
-      return NextResponse.json({ message: "Unauthorized" }, { status: 401 })
+      return NextResponse.json(
+        { message: "Unauthorized" },
+        {
+          status: 401,
+          headers: corsHeaders,
+        }
+      )
     }
 
     if (!authHeader.startsWith("Bearer ")) {
@@ -25,13 +45,22 @@ export const POST = async (req: NextRequest) => {
         {
           message: "Invalid auth header format. Expected: 'Bearer <API_KEY>'",
         },
-        { status: 401 }
+        {
+          status: 401,
+          headers: corsHeaders,
+        }
       )
     }
 
     const apiKey = authHeader.split(" ")[1]
     if (!apiKey || apiKey.trim() === "") {
-      return NextResponse.json({ message: "Invalid API key" }, { status: 401 })
+      return NextResponse.json(
+        { message: "Invalid API key" },
+        {
+          status: 401,
+          headers: corsHeaders,
+        }
+      )
     }
 
     const user = await db.user.findUnique({
@@ -39,7 +68,13 @@ export const POST = async (req: NextRequest) => {
       include: { eventCategories: true },
     })
     if (!user) {
-      return NextResponse.json({ message: "Invalid API key" }, { status: 401 })
+      return NextResponse.json(
+        { message: "Invalid API key" },
+        {
+          status: 401,
+          headers: corsHeaders,
+        }
+      )
     }
 
     if (!user.discordId) {
@@ -47,7 +82,10 @@ export const POST = async (req: NextRequest) => {
         {
           message: "Please enter your discord ID in your account settings",
         },
-        { status: 403 }
+        {
+          status: 403,
+          headers: corsHeaders,
+        }
       )
     }
 
@@ -64,7 +102,10 @@ export const POST = async (req: NextRequest) => {
         {
           message: "Invalid JSON request body",
         },
-        { status: 400 }
+        {
+          status: 400,
+          headers: corsHeaders,
+        }
       )
     }
 
@@ -79,7 +120,10 @@ export const POST = async (req: NextRequest) => {
         {
           message: `You dont have a category named "${validationResult.category}"`,
         },
-        { status: 404 }
+        {
+          status: 404,
+          headers: corsHeaders,
+        }
       )
     }
 
@@ -133,7 +177,10 @@ export const POST = async (req: NextRequest) => {
           message: "Error processing event",
           eventId: event.id,
         },
-        { status: 500 }
+        {
+          status: 500,
+          headers: corsHeaders,
+        }
       )
     }
 
@@ -151,13 +198,17 @@ export const POST = async (req: NextRequest) => {
         },
         {
           status: 422,
+          headers: corsHeaders,
         }
       )
     }
 
     return NextResponse.json(
       { message: "Internal server error" },
-      { status: 500 }
+      {
+        status: 500,
+        headers: corsHeaders,
+      }
     )
   }
 }
