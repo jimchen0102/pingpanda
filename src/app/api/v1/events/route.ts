@@ -14,6 +14,16 @@ const REQUEST_VALIDATOR = z
 
 export const POST = async (req: NextRequest) => {
   try {
+    const corsHeaders = {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "POST, OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type, Authorization",
+    }
+
+    if (req.method === "OPTIONS") {
+      return new NextResponse(null, { status: 204, headers: corsHeaders })
+    }
+
     const authHeader = req.headers.get("Authorization")
 
     if (!authHeader) {
@@ -50,10 +60,6 @@ export const POST = async (req: NextRequest) => {
         { status: 403 }
       )
     }
-
-    const currentData = new Date()
-    const currentMonth = currentData.getMonth() + 1
-    const currentYear = currentData.getFullYear()
 
     const discord = new DiscordClient(process.env.DISCORD_BOT_TOKEN)
 
