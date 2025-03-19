@@ -17,9 +17,9 @@ const EVENT_CATEGORY_VALIDATOR = z.object({
   name: CATEGORY_NAME_VALIDATOR,
   color: z
     .string()
-    .min(1, "Color is required")
-    .regex(/^#[0-9A-F]{6}$/i, "Invalid color format."),
-  emoji: z.string().emoji("Invalid emoji").optional(),
+    .min(1, "顏色為必填")
+    .regex(/^#[0-9A-F]{6}$/i, "顏色格式無效."),
+  emoji: z.string().emoji("無效的表情符號").optional(),
 })
 
 type EventCategoryForm = z.infer<typeof EVENT_CATEGORY_VALIDATOR>

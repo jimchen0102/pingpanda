@@ -6,7 +6,6 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { client } from "@/lib/client"
 import { useMutation } from "@tanstack/react-query"
-import Link from "next/link"
 import { useState } from "react"
 
 export const AccountSettings = ({
@@ -31,7 +30,7 @@ export const AccountSettings = ({
           className="mt-1"
           value={discordId}
           onChange={(e) => setDiscordId(e.target.value)}
-          placeholder="Enter your Discord ID"
+          placeholder="輸入你的 Discord ID"
         />
       </div>
 
