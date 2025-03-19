@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import { Noto_Sans_TC } from "next/font/google"
-import { Providers } from "@/components/providers"
-import { EB_Garamond } from "next/font/google"
+import { ProgressProvider } from "@/providers/progress-provider"
+import { QueryProvider } from "@/providers/query-provider"
 import { cn } from "@/lib/utils"
 
 import "./globals.css"
@@ -26,9 +26,11 @@ export default function RootLayout({
     <ClerkProvider localization={zhTW}>
       <html lang="en" className={cn(notoSans.variable)}>
         <body className="flex min-h-screen flex-col bg-brand-50 font-sans text-brand-950 antialiased">
-          <main className="relative flex flex-1 flex-col">
-            <Providers>{children}</Providers>
-          </main>
+          <ProgressProvider>
+            <main className="relative flex flex-1 flex-col">
+              <QueryProvider>{children}</QueryProvider>
+            </main>
+          </ProgressProvider>
         </body>
       </html>
     </ClerkProvider>

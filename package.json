@@ -11,6 +11,7 @@
     "postinstall": "prisma generate"
   },
   "dependencies": {
+    "@bprogress/next": "^3.2.10",
     "@clerk/localizations": "^3.7.0",
     "@clerk/nextjs": "^6.5.1",
     "@discordjs/rest": "^2.4.0",

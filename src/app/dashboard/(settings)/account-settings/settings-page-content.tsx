@@ -37,9 +37,13 @@ export const AccountSettings = ({
 
       <p className="mt-2 text-sm/6 text-gray-600">
         不知道如何找到你的 Discord ID？
-        <Link href="#" className="text-brand-600 hover:text-brand-500">
+        <a
+          href="https://support.discord.com/hc/zh-tw/articles/206346498-%E6%88%91%E5%9C%A8%E5%93%AA%E8%A3%A1%E5%8F%AF%E4%BB%A5%E6%89%BE%E5%88%B0%E6%88%91%E7%9A%84%E4%BD%BF%E7%94%A8%E8%80%85-%E4%BC%BA%E6%9C%8D%E5%99%A8-%E8%A8%8A%E6%81%AF-ID"
+          className="text-brand-600 hover:text-brand-500"
+          target="_blank"
+        >
           在這裡了解如何獲取它。
-        </Link>
+        </a>
         .
       </p>
 
