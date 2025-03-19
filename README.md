@@ -12,7 +12,7 @@
   <img src="https://img.shields.io/badge/Clerk-512CFB?style=for-the-badge&logo=clerk&logoColor=white" alt="Clerk"/>
 </div>
 
-<h3 align="center">PingPanda - 事件監控平台</h3>
+<h3 align="center">PingPanda - 事件通知平台</h3>
 
 ## 📋 <a name="table">目錄</a>
 1. 🤖 [專案介紹](#introduction)
@@ -21,7 +21,7 @@
 
 ## <a name="introduction">🤖 專案介紹</a>
 
-PingPanda 是一個事件監控平台，開發者可以透過 API 發送事件通知，將自己的應用和 Discord 做整合。
+PingPanda 是一個事件通知平台，開發者可以透過 API 發送事件通知，將自己的應用和 Discord 做整合。
 
 ## <a name="tech-stack">⚙️ 技術棧</a>
 
